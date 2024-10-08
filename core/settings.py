@@ -54,7 +54,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    "home",
+#    "home",
+    'index',
+    'adminlte',  # 确保这里是 'adminlte' 而不是 'home'
 ]
 
 MIDDLEWARE = [
@@ -169,5 +171,6 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = '/'
+#LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/adminlte/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
