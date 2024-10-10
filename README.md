@@ -1,6 +1,6 @@
 # Django AdminLTE
 
-This project is a Django starter based on the AdminLTE theme, with custom modifications.
+This project is a Django starter based on the AdminLTE theme, with custom modifications. It provides a ready-to-use admin interface with improved authentication flows and a customized landing page.
 
 ## Recent Changes
 
@@ -34,22 +34,28 @@ This project is a Django starter based on the AdminLTE theme, with custom modifi
    pip install -r requirements.txt
    ```
 
-4. Run database migrations:
+4. Set up environment variables:
+   ```
+   cp .env.example .env
+   ```
+   Edit the `.env` file and set the appropriate values for your environment.
+
+5. Run database migrations:
    ```
    python manage.py migrate
    ```
 
-5. Create a superuser (optional):
+6. Create a superuser (optional):
    ```
    python manage.py createsuperuser
    ```
 
-6. Run the development server:
+7. Run the development server:
    ```
    python manage.py runserver
    ```
 
-7. Visit http://127.0.0.1:8000 in your browser
+8. Visit http://127.0.0.1:8000 in your browser
 
 ## Notes
 
@@ -66,3 +72,5 @@ If you have any suggestions or find a bug, please create an issue or submit a pu
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This project is based on work by AppSeed, with modifications and improvements by TideP. For more information about licensing and usage, please refer to the LICENSE file.
