@@ -28,13 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 
 # Enable/Disable DEBUG Mode
-DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
+DEBUG = False
 
 # Docker HOST
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['adminlte-fmd6h0akefftarcq.canadacentral-01.azurewebsites.net', 'localhost', '127.0.0.1']
 
 # Add here your deployment HOSTS
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085']
+CSRF_TRUSTED_ORIGINS = ['https://adminlte-fmd6h0akefftarcq.canadacentral-01.azurewebsites.net']
 
 #Render Context
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
