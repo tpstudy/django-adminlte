@@ -19,9 +19,10 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', include('index.urls')),
-    path('adminlte/', include('adminlte.urls')),
     path("admin/", admin.site.urls),
-    path("", include('admin_adminlte.urls')),
+    path('adminlte/', include('adminlte.urls')),  # 您的自定义 adminlte 应用
+    path('accounts/', include('accounts.urls')),
     path('404/', TemplateView.as_view(template_name='errors/404.html')),
     path('500/', TemplateView.as_view(template_name='errors/500.html')),
+    
 ]

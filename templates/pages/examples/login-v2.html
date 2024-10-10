@@ -20,7 +20,7 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="{% url 'dashboardv2' %}" class="h1"><b>Admin</b>LTE</a>
+      <a href="{% url 'adminlte:dashboardv2' %}" class="h1"><b>Admin</b>LTE</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
@@ -89,10 +89,10 @@
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="{% url 'forgot_password_v2' %}">I forgot my password</a>
+        <a href="{% url 'adminlte:forgot_password_v2' %}">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="{% url 'registration_v2' %}" class="text-center">Register a new membership</a>
+        <a href="{% url 'adminlte:registration_v2' %}" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.card-body -->

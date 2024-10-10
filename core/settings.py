@@ -14,6 +14,7 @@ import os, random, string
 from pathlib import Path
 from dotenv import load_dotenv
 from str2bool import str2bool
+from django.core.management.utils import get_random_secret_key
 
 load_dotenv()  # take environment variables from .env.
 
@@ -24,13 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-if not SECRET_KEY:
-    SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 
 # Enable/Disable DEBUG Mode
-DEBUG = str2bool(os.environ.get('DEBUG'))
-#print(' DEBUG -> ' + str(DEBUG) ) 
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
 # Docker HOST
 ALLOWED_HOSTS = ['*']
@@ -54,7 +52,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-#    "home",
+
+    'accounts',
     'index',
     'adminlte',  # 确保这里是 'adminlte' 而不是 'home'
 ]
@@ -174,3 +173,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #LOGIN_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/adminlte/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') # 替换为您的 Gmail 地址
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # 替换为您的密码或应用专用密码
