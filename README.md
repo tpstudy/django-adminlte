@@ -12,6 +12,8 @@ This project is a Django starter based on the AdminLTE theme, with custom modifi
 6. Added new static resources, including images and style files.
 7. Updated the project's URL configuration to accommodate the new structure.
 8. Modified `settings.py`, adjusting the app list and other configurations.
+9. Improved password reset functionality with custom views and templates.
+10. Unified the style across all authentication pages (login, registration, password reset).
 
 ## How to Run the Project
 
@@ -53,7 +55,9 @@ This project is a Django starter based on the AdminLTE theme, with custom modifi
 
 - This project is a customized version of the Django starter based on the AdminLTE theme.
 - The original `home` app has been renamed to `adminlte` app to better reflect its purpose.
+- Authentication pages (login, registration, password reset) now have a consistent style.
 - Make sure to change the `SECRET_KEY` and disable debug mode before deploying to a production environment.
+- Email settings need to be configured for password reset functionality to work properly.
 
 ## Contributing
 
