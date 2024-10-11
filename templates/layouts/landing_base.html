@@ -12,56 +12,8 @@
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}">
   {% block extracss %}{% endblock extracss %}
-  <style>
-    .navbar-brand {
-      margin-right: auto;
-    }
-    .navbar-nav {
-      margin-left: auto;
-    }
-    .navbar-brand img {
-      height: 30px;  /* 调整这个值来改变logo大小 */
-      width: auto;
-    }
-    @media (max-width: 768px) {
-      .navbar-brand img {
-        height: 25px;  /* 在移动设备上稍微缩小logo */
-      }
-    }
-    .footer-section {
-        background-color: #f8f9fa;
-        color: #333;
-    }
-    .footer-section h3 {
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
-    .footer-section h5 {
-        font-weight: bold;
-        font-size: 1rem;
-    }
-    .footer-section ul li {
-        margin-bottom: 0.5rem;
-    }
-    .footer-section a {
-        color: #333;
-        text-decoration: none;
-    }
-    .footer-section a:hover {
-        color: #5046e5;
-    }
-    .social-icons a {
-        font-size: 1.2rem;
-        color: #5046e5;
-    }
-    .social-icons a:hover {
-        color: #00d4ff;
-    }
-    .footer-section hr {
-        border-top: 1px solid #dee2e6;
-    }
-  </style>
 </head>
 <body class="hold-transition layout-top-nav">
 
@@ -166,5 +118,6 @@
 
   {% block extrajs %}{% endblock extrajs %}
 
+  <script src="{% static 'js/landing.js' %}"></script>
 </body>
 </html>
