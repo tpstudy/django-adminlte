@@ -7,7 +7,7 @@ This project is a Django starter based on the AdminLTE theme, with custom modifi
 1. **New INDEX App**: 
    - Handles the default landing page display
    - Includes common website templates for developers to easily populate with their own content
-   - Created a base template for the website's frontend
+   - Created a base template langding_base.html for the website's frontend
    - Facilitates the development of additional pages for the website's public-facing side
 
 2. **Code Reorganization**:
@@ -84,4 +84,4 @@ If you have any suggestions or find a bug, please create an issue or submit a pu
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-This project is based on work by AppSeed, with modifications and improvements by TideP. For more information about licensing and usage, please refer to the LICENSE file.
+This project is based on work by AppSeed, with modifications and improvements by TPSTUDY. For more information about licensing and usage, please refer to the LICENSE file.
