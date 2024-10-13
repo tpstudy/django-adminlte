@@ -25,10 +25,16 @@
       </div>
     </div>
 
-    <!-- 用户认证相关链接 -->
+    <!-- User Authentication Links -->
     {% if request.user.is_authenticated %}
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <a href="{% url 'accounts:profile_show' %}" class="nav-link">
+            <i class="nav-icon fas fa-user"></i>
+            <p>Profile</p>
+          </a>
+        </li>
         <li class="nav-item">
           <a href="{% url 'accounts:password_change' %}" class="nav-link">
             <i class="nav-icon fas fa-key"></i>

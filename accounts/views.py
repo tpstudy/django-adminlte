@@ -3,10 +3,15 @@ from django.contrib.auth import login, views as auth_views, logout
 from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse_lazy  # 添加这行
-from .forms import LoginForm, RegistrationForm, UserPasswordResetForm, UserSetPasswordForm, UserPasswordChangeForm
+from .forms import LoginForm, RegistrationForm, UserPasswordResetForm, UserSetPasswordForm, UserPasswordChangeForm, UserProfileForm
 from django.contrib import messages
 from django.contrib.auth.forms import SetPasswordForm
 from django.contrib.auth.views import PasswordResetConfirmView
+from django.contrib.auth.decorators import login_required
+import logging
+from django.http import JsonResponse
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 
@@ -119,3 +124,38 @@ class CustomPasswordResetConfirmView(PasswordResetConfirmView):
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'accounts/password_reset_complete.html'
 
+
+
+
+@login_required
+def profile(request):
+    return render(request, 'accounts/profile.html')
+
+@login_required
+def profile_view(request):
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your profile has been updated successfully.')
+            return redirect('profile')
+    else:
+        form = UserProfileForm(instance=request.user)
+    
+    print(f"Form fields: {form.fields}")  # 添加这行来调试
+    return render(request, 'accounts/profile.html', {'form': form})
+
+@login_required
+def profile_show(request):
+    return render(request, 'accounts/profile_show.html')
+
+@login_required
+def profile_edit(request):
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('accounts:profile_show')
+    else:
+        form = UserProfileForm(instance=request.user)
+    return render(request, 'accounts/profile_edit.html', {'form': form})

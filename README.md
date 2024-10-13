@@ -4,16 +4,27 @@ This project is a Django starter based on the AdminLTE theme, with custom modifi
 
 ## Recent Changes
 
-1. Restructured the project, renaming the `home` app to `adminlte` app.
-2. Added a new `index` app to handle the landing page and other custom pages.
-3. Customized the landing page (`landing.html`) with new design and content.
-4. Added a reusable footer in `landing_base.html` to improve code reusability.
-5. Updated account-related templates, including login and registration pages.
-6. Added new static resources, including images and style files.
-7. Updated the project's URL configuration to accommodate the new structure.
-8. Modified `settings.py`, adjusting the app list and other configurations.
-9. Improved password reset functionality with custom views and templates.
-10. Unified the style across all authentication pages (login, registration, password reset).
+1. **New INDEX App**: 
+   - Handles the default landing page display
+   - Includes common website templates for developers to easily populate with their own content
+   - Created a base template for the website's frontend
+   - Facilitates the development of additional pages for the website's public-facing side
+
+2. **Code Reorganization**:
+   - Example code moved from the virtual environment to the project directory
+   - Allows developers to more easily modify and learn from the code
+
+3. **Optimized APP Structure**:
+   - Original HOME app split into accounts app and adminlte app
+   - accounts app: Manages user login, registration, profile editing, etc.
+   - adminlte app: Showcases various AdminLTE component examples
+
+4. **Enhanced User Management**:
+   - New personal information editing page
+   - Rewritten password reset process
+   - For easier debugging, email operations are displayed in the terminal
+   - Developers can configure email servers based on their needs
+
 
 ## How to Run the Project
 
